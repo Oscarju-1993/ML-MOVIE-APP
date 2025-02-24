@@ -4,19 +4,12 @@ import joblib
 from fastapi import FastAPI
 from sklearn.metrics.pairwise import cosine_similarity
 
-#  Definir la ruta base del proyecto dinámicamente
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATASET_DIR = os.path.join(BASE_DIR, "data_set")
-
-# Construir rutas de los archivos
-dataset_path = os.path.join(DATASET_DIR, "movies_dataset_processed.parquet")
-vectorizer_path = os.path.join(DATASET_DIR, "vectorizer.pkl")
-matriz_reducida_path = os.path.join(DATASET_DIR, "matriz_reducida.pkl")
-
-#  Verificar que los archivos existen antes de cargarlos
-for file in [dataset_path, vectorizer_path, matriz_reducida_path]:
-    if not os.path.exists(file):
-        raise FileNotFoundError(f"El archivo {file} no existe. Verifica su ubicación.")
+# Definir rutas de archivos
+RUTA_BASE = "C:/Users/oscar/Desktop/P1-HENRY/data_set/processed"
+RUTA_BASE_ = "C:/Users/oscar/Desktop/P1-HENRY/data_set"
+vectorizer_path = os.path.join(RUTA_BASE_, 'vectorizer.pkl')
+matriz_reducida_path = os.path.join(RUTA_BASE_, 'matriz_reducida.pkl')
+dataset_path = os.path.join(RUTA_BASE, "movies_dataset_processed.parquet")
 
 # Cargar modelos y datos
 movies_df = pd.read_parquet(dataset_path)
