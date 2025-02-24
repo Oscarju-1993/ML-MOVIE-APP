@@ -7,9 +7,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Definir rutas de archivos
 RUTA_BASE = "C:/Users/oscar/Desktop/P1-HENRY/data_set/processed"
 RUTA_BASE_ = "C:/Users/oscar/Desktop/P1-HENRY/data_set"
-vectorizer_path = os.path.join(RUTA_BASE_, 'vectorizer.pkl')
-matriz_reducida_path = os.path.join(RUTA_BASE_, 'matriz_reducida.pkl')
-dataset_path = os.path.join(RUTA_BASE, "movies_dataset_processed.parquet")
+vectorizer_path = os.path.join(RUTA_BASE, 'vectorizer.pkl')
+matriz_reducida_path = os.path.join(RUTA_BASE, 'matriz_reducida.pkl')
+dataset_path = os.path.join(RUTA_BASE_, "movies_dataset_processed.parquet")
 
 # Cargar modelos y datos
 movies_df = pd.read_parquet(dataset_path)
